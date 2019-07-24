@@ -2491,6 +2491,13 @@
                  </property>
                 </widget>
                </item>
+               <item>
+                <widget class="QCheckBox" name="enhancedTexFileStorageCheckBox">
+                 <property name="text">
+                  <string>Use file storage instead of memory cache</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
              <item>
@@ -2523,7 +2530,7 @@
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>Enhanced texture cache size:</string>
+                   <string>Size of memory cache for enhanced textures:</string>
                   </property>
                   <property name="buddy">
                    <cstring>textureFilterCacheSpinBox</cstring>
@@ -2803,6 +2810,13 @@
                      </property>
                      <property name="text">
                       <string>Dump/edit textures</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="hiresTexFileStorageCheckBox">
+                     <property name="text">
+                      <string>Use file storage instead of memory cache</string>
                      </property>
                     </widget>
                    </item>
@@ -3969,6 +3983,22 @@
     <hint type="destinationlabel">
      <x>634</x>
      <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>enhancedTexFileStorageCheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>textureFilterCacheFrame</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>20</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>20</x>
+     <y>20</y>
     </hint>
    </hints>
   </connection>

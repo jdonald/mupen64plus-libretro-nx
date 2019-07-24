@@ -245,6 +245,8 @@ void ConfigDialog::_init()
 	ui->force16bppCheckBox->setChecked(config.textureFilter.txForce16bpp != 0);
 	ui->compressCacheCheckBox->setChecked(config.textureFilter.txCacheCompression != 0);
 	ui->saveTextureCacheCheckBox->setChecked(config.textureFilter.txSaveCache != 0);
+	ui->enhancedTexFileStorageCheckBox->setChecked(config.textureFilter.txEnhancedTextureFileStorage != 0);
+	ui->hiresTexFileStorageCheckBox->setChecked(config.textureFilter.txHiresTextureFileStorage != 0);
 
 	ui->txPathLabel->setText(QString::fromWCharArray(config.textureFilter.txPath));
 	ui->txCachePathLabel->setText(QString::fromWCharArray(config.textureFilter.txCachePath));
@@ -510,6 +512,8 @@ void ConfigDialog::accept()
 	config.textureFilter.txCacheCompression = ui->compressCacheCheckBox->isChecked() ? 1 : 0;
 	config.textureFilter.txForce16bpp = ui->force16bppCheckBox->isChecked() ? 1 : 0;
 	config.textureFilter.txSaveCache = ui->saveTextureCacheCheckBox->isChecked() ? 1 : 0;
+	config.textureFilter.txEnhancedTextureFileStorage = ui->enhancedTexFileStorageCheckBox->isChecked() ? 1 : 0;
+	config.textureFilter.txHiresTextureFileStorage = ui->hiresTexFileStorageCheckBox->isChecked() ? 1 : 0;
 
 	QString txPath = ui->txPathLabel->text();
 	if (!txPath.isEmpty())
