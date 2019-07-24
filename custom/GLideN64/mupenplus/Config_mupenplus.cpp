@@ -97,6 +97,10 @@ void LoadCustomSettings(bool internal)
 						config.generalEmulation.enableLegacyBlending = atoi(l.value);
 					else if (!strcmp(l.name, "generalEmulation\\enableFragmentDepthWrite"))
 						config.generalEmulation.enableFragmentDepthWrite = atoi(l.value);
+					else if (!strcmp(l.name, "textureFilter\\txEnhancedTextureFileStorage"))
+						config.textureFilter.txEnhancedTextureFileStorage = atoi(l.value);
+					else if (!strcmp(l.name, "textureFilter\\txHiresTextureFileStorage"))
+						config.textureFilter.txHiresTextureFileStorage = atoi(l.value);
 				}
 			}
 		}
@@ -150,6 +154,9 @@ extern "C" void Config_LoadConfig()
 	config.textureFilter.txHiresFullAlphaChannel = txHiresFullAlphaChannel;
 	config.video.fxaa = EnableFXAA;
 	config.video.multisampling = MultiSampling;
+	
+	config.textureFilter.txEnhancedTextureFileStorage = EnableTxEnhancedTextureFileStorage;
+	config.textureFilter.txHiresTextureFileStorage = EnableTxHiresTextureFileStorage;
 	
     // Overscan
     config.frameBufferEmulation.enableOverscan = EnableOverscan;
